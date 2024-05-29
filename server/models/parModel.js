@@ -12,7 +12,8 @@ const parSchema = new mongoose.Schema({
   PropertyTagNo: { type: String },
   AccountClassificationCode: { type: String },
   EstimatedUsefulLife: { type: Number },
-  Remarks: { type: String }
+  Remarks: { type: String },
+  Office: { type: String }
 });
 
 // Create the Item model
