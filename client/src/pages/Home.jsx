@@ -2,6 +2,7 @@
   import PARlist from '../components/PARlist';
   import PARform from '../components/PARform';
   import Header from '../components/Header';
+  import Footer from '../components/Footer';
 
   const Home = () => {
     const [showPARform, setShowPARform] = useState(false);
@@ -11,7 +12,7 @@
     };
 
     return (
-      <div className="bg-timberwolf min-h-screen"> {/* Set background color to cover entire page */}
+      <div className="bg-timberwolf min-h-screen pt-24 pb-8 "> {/* Set background color to cover entire page */}
         <Header />
         <div className="flex flex-col items-center justify-center p-8">
           <div className="bg-white p-4 rounded-lg w-full max-w-full">
@@ -25,6 +26,7 @@
             <PARlist />
           </div>
         </div>
+        <Footer />
       </div>
     );
   };

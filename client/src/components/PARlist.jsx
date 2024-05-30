@@ -13,7 +13,7 @@ const PARList = () => {
 
   const fetchItems = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/parRoute');
+      const response = await axios.get('http://localhost:3000/api/parRoute');
       setItems(response.data);
     } catch (error) {
       console.error(error);
@@ -27,7 +27,7 @@ const PARList = () => {
   const handleDelete = async (id) => {
     console.log("Deleting item with ID:", id);
     try {
-      await axios.delete(`http://localhost:5000/api/parRoute/${id}`);
+      await axios.delete(`http://localhost:3000/api/parRoute/${id}`);
       fetchItems();
     } catch (error) {
       console.error(error);

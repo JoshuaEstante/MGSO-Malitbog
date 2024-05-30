@@ -3,6 +3,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import parRoute from './routes/parRoute.js';
+import userRoute from './routes/userRoute.js';
 
 // Initializing the app
 const app = express();
@@ -24,7 +25,8 @@ app.get('/', (req, res) => {
 
 // Example route
 app.use('/api/parRoute', parRoute);
+app.use('/api/userRoute', userRoute);
 
 // Start the server
-const PORT = 5000;
+const PORT = 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

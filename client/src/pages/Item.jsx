@@ -11,7 +11,7 @@ const Item = () => {
   useEffect(() => {
     const fetchItem = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/parRoute/${id}`);
+        const response = await axios.get(`http://localhost:3000/api/parRoute/${id}`);
         setItem(response.data);
       } catch (error) {
         setError(error.response ? error.response.data.message : 'An error occurred');

@@ -27,9 +27,9 @@ const PARForm = ({ editId, setEditId, fetchItems }) => {
     e.preventDefault();
     try {
       if (editId) {
-        await axios.put(`http://localhost:5000/api/parRoute/${editId}`, form);
+        await axios.put(`http://localhost:3000/api/parRoute/${editId}`, form);
       } else {
-        await axios.post('http://localhost:5000/api/parRoute', form);
+        await axios.post('http://localhost:3000/api/parRoute', form);
       }
       setForm({
         ID: '',
@@ -45,6 +45,7 @@ const PARForm = ({ editId, setEditId, fetchItems }) => {
         Remarks: '',
         Office:''
       });
+      window.location.reload(); // Refresh the page after successful create/update
     } catch (error) {
       console.error(error);
     }
