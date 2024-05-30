@@ -10,7 +10,13 @@ const app = express();
 
 // Middleware
 app.use(express.json()); // For parsing application/json
-app.use(cors()); // For enabling CORS
+app.use(cors(
+  {
+      origin: ["http://localhost:5173"],
+      methods: ["POST", "GET"],
+      credentials: true,
+  }
+));
 
 // MongoDB connection
 const mongoURI = 'mongodb+srv://user:admin@mgsomalitbog.hlfy1ms.mongodb.net/?retryWrites=true&w=majority&appName=MGSOMalitbog';

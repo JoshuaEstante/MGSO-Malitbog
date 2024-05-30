@@ -4,9 +4,13 @@ import { useAuthContext } from './hooks/useAuthContext';
 import Home from './pages/Home';
 import Item from './pages/Item';
 import Login from './pages/Login';
+import axios from 'axios';
 
 const App = () => {
   const { user } = useAuthContext();
+
+  axios.defaults.withCredentials = true;
+  axios.post('https://mgso-malitbog-server.vercel.app')
 
   return (
     <Routes>
