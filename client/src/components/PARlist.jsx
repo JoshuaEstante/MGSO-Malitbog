@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
 
 const PARList = () => {
   const [items, setItems] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchItems();
@@ -19,8 +22,7 @@ const PARList = () => {
   };
 
   const handleEdit = (item) => {
-    // Placeholder edit logic, you can replace it with your actual edit logic
-    console.log("Editing item:", item);
+    navigate(`/item/${item._id}`);
   };
 
   const handleDelete = async (id) => {
