@@ -46,61 +46,68 @@ const Item = () => {
   }
 
   return (
-    <div className="mx-auto max-w-md p-6 border border-gray-300 shadow-lg rounded-lg">
-      <h1 className="text-xl font-bold mb-4">Item Details</h1>
+    <div className="p-8 bg-timberwolf">
+    <div className="mx-auto w-4/5 p-6 border border-gray-300 shadow-lg rounded-lg bg-white">
+      <h1 className="text-xl font-bold mb-4 text-center">Item Details</h1>
       {item && (
         <form>
-          <div className="mb-4">
-            <label className="block mb-2">ID:</label>
-            <input type="text" name="ID" value={item.ID} onChange={handleChange} className="w-full px-3 py-2 border border-gray-300 rounded-md" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="mb-4">
+              <label className="block mb-2">ID:</label>
+              <input type="text" name="ID" value={item.ID} onChange={handleChange} className="w-full px-3 py-2 border border-gray-300 rounded-md" />
+            </div>
+            <div className="mb-4">
+              <label className="block mb-2">Description:</label>
+              <input type="text" name="Description" value={item.Description} onChange={handleChange} className="w-full px-3 py-2 border border-gray-300 rounded-md" />
+            </div>
+            <div className="mb-4">
+              <label className="block mb-2">QTY:</label>
+              <input type="number" name="QTY" value={item.QTY} onChange={handleChange} className="w-full px-3 py-2 border border-gray-300 rounded-md" />
+            </div>
+            <div className="mb-4">
+              <label className="block mb-2">UNIT:</label>
+              <input type="text" name="UNIT" value={item.UNIT} onChange={handleChange} className="w-full px-3 py-2 border border-gray-300 rounded-md" />
+            </div>
+            <div className="mb-4">
+              <label className="block mb-2">Unit Cost:</label>
+              <input type="number" step="0.01" name="UnitCost" value={item.UnitCost} onChange={handleChange} className="w-full px-3 py-2 border border-gray-300 rounded-md" />
+            </div>
+            <div className="mb-4">
+              <label className="block mb-2">Total Cost:</label>
+              <input type="number" step="0.01" name="TotalCost" value={item.TotalCost} onChange={handleChange} className="w-full px-3 py-2 border border-gray-300 rounded-md" />
+            </div>
+            <div className="mb-4">
+              <label className="block mb-2">Date Acquired:</label>
+              <input type="date" name="DateAcquired" value={new Date(item.DateAcquired).toISOString().split('T')[0]} onChange={handleChange} className="w-full px-3 py-2 border border-gray-300 rounded-md" />
+            </div>
+            <div className="mb-4">
+              <label className="block mb-2">Property Tag No:</label>
+              <input type="text" name="PropertyTagNo" value={item.PropertyTagNo} onChange={handleChange} className="w-full px-3 py-2 border border-gray-300 rounded-md" />
+            </div>
+            <div className="mb-4">
+              <label className="block mb-2">Account Classification Code:</label>
+              <input type="text" name="AccountClassificationCode" value={item.AccountClassificationCode} onChange={handleChange} className="w-full px-3 py-2 border border-gray-300 rounded-md" />
+            </div>
+            <div className="mb-4">
+              <label className="block mb-2">Estimated Useful Life:</label>
+              <input type="number" name="EstimatedUsefulLife" value={item.EstimatedUsefulLife} onChange={handleChange} className="w-full px-3 py-2 border border-gray-300 rounded-md" />
+            </div>
+            <div className="mb-4">
+              <label className="block mb-2">Remarks:</label>
+              <input type="text" name="Remarks" value={item.Remarks} onChange={handleChange} className="w-full px-3 py-2 border border-gray-300 rounded-md" />
+            </div>
+            <div className="mb-4">
+              <label className="block mb-2">Office:</label>
+              <input type="text" name="Office" value={item.Office} onChange={handleChange} className="w-full px-3 py-2 border border-gray-300 rounded-md" />
+            </div>
           </div>
-          <div className="mb-4">
-            <label className="block mb-2">Description:</label>
-            <input type="text" name="Description" value={item.Description} onChange={handleChange} className="w-full px-3 py-2 border border-gray-300 rounded-md" />
+
+          <div className="flex justify-center">
+            <button type="button" onClick={handleSave} className="mt-4 bg-blue-500 text-white px-8 py-2 rounded-md hover:bg-blue-600">Save</button>
           </div>
-          <div className="mb-4">
-            <label className="block mb-2">QTY:</label>
-            <input type="number" name="QTY" value={item.QTY} onChange={handleChange} className="w-full px-3 py-2 border border-gray-300 rounded-md" />
-          </div>
-          <div className="mb-4">
-            <label className="block mb-2">UNIT:</label>
-            <input type="text" name="UNIT" value={item.UNIT} onChange={handleChange} className="w-full px-3 py-2 border border-gray-300 rounded-md" />
-          </div>
-          <div className="mb-4">
-            <label className="block mb-2">Unit Cost:</label>
-            <input type="number" step="0.01" name="UnitCost" value={item.UnitCost} onChange={handleChange} className="w-full px-3 py-2 border border-gray-300 rounded-md" />
-          </div>
-          <div className="mb-4">
-            <label className="block mb-2">Total Cost:</label>
-            <input type="number" step="0.01" name="TotalCost" value={item.TotalCost} onChange={handleChange} className="w-full px-3 py-2 border border-gray-300 rounded-md" />
-          </div>
-          <div className="mb-4">
-            <label className="block mb-2">Date Acquired:</label>
-            <input type="date" name="DateAcquired" value={new Date(item.DateAcquired).toISOString().split('T')[0]} onChange={handleChange} className="w-full px-3 py-2 border border-gray-300 rounded-md" />
-          </div>
-          <div className="mb-4">
-            <label className="block mb-2">Property Tag No:</label>
-            <input type="text" name="PropertyTagNo" value={item.PropertyTagNo} onChange={handleChange} className="w-full px-3 py-2 border border-gray-300 rounded-md" />
-          </div>
-          <div className="mb-4">
-            <label className="block mb-2">Account Classification Code:</label>
-            <input type="text" name="AccountClassificationCode" value={item.AccountClassificationCode} onChange={handleChange} className="w-full px-3 py-2 border border-gray-300 rounded-md" />
-          </div>
-          <div className="mb-4">
-            <label className="block mb-2">Estimated Useful Life:</label>
-            <input type="number" name="EstimatedUsefulLife" value={item.EstimatedUsefulLife} onChange={handleChange} className="w-full px-3 py-2 border border-gray-300 rounded-md" />
-          </div>
-          <div className="mb-4">
-            <label className="block mb-2">Remarks:</label>
-            <input type="text" name="Remarks" value={item.Remarks} onChange={handleChange} className="w-full px-3 py-2 border border-gray-300 rounded-md" />
-          </div>
-          <div className="mb-4">
-            <label className="block mb-2">Office:</label>
-            <input type="text" name="Office" value={item.Office} onChange={handleChange} className="w-full px-3 py-2 border border-gray-300 rounded-md" />
-          </div>
-          <button type="button" onClick={handleSave} className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Save</button>
         </form>
       )}
+    </div>
     </div>
   );
 };
