@@ -13,7 +13,7 @@ app.use(express.json()); // For parsing application/json
 app.use(cors(
   {
       origin: ["http://localhost:5173","https://mgsomalitbog.vercel.app"],
-      methods: ["POST", "GET", "DELETE"],
+      methods: ["POST", "GET", "DELETE", "PUT"],
       credentials: true,
   }
 ));
