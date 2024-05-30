@@ -30,7 +30,7 @@ const Item = () => {
 
   const handleSave = async () => {
     try {
-      await axios.put(`http://localhost:5000/api/parRoute/${id}`, item);
+      await axios.put(`https://mgso-malitbog-server.vercel.app/api/parRoute/${id}`, item);
       alert('Item updated successfully');
     } catch (error) {
       alert('Error updating item: ' + (error.response ? error.response.data.message : 'An error occurred'));
