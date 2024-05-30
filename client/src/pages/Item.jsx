@@ -32,6 +32,7 @@ const Item = () => {
     try {
       await axios.put(`https://mgso-malitbog-server.vercel.app/api/parRoute/${id}`, item);
       alert('Item updated successfully');
+      window.location.reload(); // Reload the page
     } catch (error) {
       alert('Error updating item: ' + (error.response ? error.response.data.message : 'An error occurred'));
     }
